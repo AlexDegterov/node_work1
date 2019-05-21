@@ -1,0 +1,97 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title Корректировка проекта теплоснабжения пождепо по замечаниям МОЭКа. Биржа труда
+    meta(name='keywords', content='проект, работа, выполнить, проектирование')
+    meta(name='description', content='Сервис по поиску исполнителей проектных работ')
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/media.css')
+    link(rel='stylesheet', href='/stylesheets/icon_sphera.css')
+    link(rel='stylesheet', href='/stylesheets/animate.min.css')
+    link(href='/favicon.ico', rel='icon', type='image/x-icon')
+  body
+    // Шапка страницы
+    .content
+      .headerMenu.default
+        .headerMenu__centerBlock
+        .headerMenu__leftBlock
+          ul.headerMenu__spisok
+            li
+              .dropdown
+                button#dropdownMenu1.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span Создать
+                .dropdown-menu(aria-labelledby='dropdownMenu1')
+                  a.headerMenu__url.dropdown-item(href='/add.html', title='Заказать выполнение проекта') Заказ на проектирование
+                  a.headerMenu__url.dropdown-item.disabled(href='#', title='Заказать выполнение монтажных работ') Заказ на монтажные работы
+                  a.headerMenu__url.dropdown-item.disabled(href='#', title='Заказать выполнение строительных работ') Заказ на строительные работы
+            li
+              .dropdown
+                button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span Все заказы
+                .dropdown-menu(aria-labelledby='dropdownMenu2')
+                  a.headerMenu__url.dropdown-item(href='index.html', title='Все заказы на выполнение проектных работ') Проектирование
+                  a.headerMenu__url.dropdown-item.disabled(href='#', title='Все заказы на выполнение монтажных работ') Монтажные работы
+                  a.headerMenu__url.dropdown-item.disabled(href='#', title='Все заказы на выполнение строительных работ') Строительные работы
+            li
+              a.headerMenu__url(href='#', title='Посмотреть всех зарегистрированных исполнителей') Исполнители
+        
+        .headerMenu__rightBlock
+          .headerMenu__leftBlock
+            ul.headerMenu__spisok
+              li
+                a.headerMenu__url(href='/contact', title='Контакты') Контакты
+      // Конец шапки страницы
+      // Хлебные крошки
+      .breadcrumbBT.row.col-lg-12
+        nav(aria-label='breadcrumb')
+          ol.breadcrumb
+            li.breadcrumb-item
+              a(href='/cources/index.html') Главная
+            li.breadcrumb-item
+              a(href='/index.html') Заказы на проектирование
+            li.breadcrumb-item
+              a(href='/razdel.html') Теплоснабжение
+            li.breadcrumb-item.active(aria-current='page') Проект узла учета тепловой энергии
+      // Конец Хлебные крошки
+      // Центральная часть
+      block content
+        // Центральная часть. Конец
+        // Подвал
+        section.footer
+          .d-flex.justify-content-center.row
+            .footer__column.col-md-4.col-sm-6.col-12
+              h3.footer__blockTitle ИСПОЛНИТЕЛЮ
+              ul.footer__list
+                li
+                  a.footer__url(href='#', title='Вход зарегистрированным пользователям') Авторизация
+                li
+                  a.footer__url(href='#', title='Страница всех заказов') Все заказы
+            .footer__column.col-md-4.col-sm-6.col-12
+              h3.footer__blockTitle ЗАКАЗЧИКУ
+              ul.footer__list
+                li
+                  a.footer__url(href='/add.html', title='Создать заказ на выполнение работы') Создать задание
+                li
+                  a.footer__url(href='#', title='Посмотреть всех зарегистрированных исполнителей') Все исполнители
+          .copiright
+            div
+              .col-lg-3.col-md-4.col-7.m-auto.copyright_text
+                | © 2018 Биржа труда
+                br
+                | Все права защищены 
+                br
+        // Подвал END
+        // Загружаемое в конце
+        script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
+        script(src='/javascripts/jquery.dotdotdot.js')
+        script(src='/javascripts/script.js')
+        script(src='/javascripts/wow.min.js')
+        script.
+          new WOW().init();

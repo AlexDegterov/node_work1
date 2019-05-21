@@ -1,0 +1,406 @@
+/* Медиа-запросы */
+/* 992px */
+@media screen and (max-width: 992px) {
+    .headerMenu__url {
+        font-size: 14px;
+    }
+
+    .btn-secondary {
+        font-size: 14px;
+    }
+
+    .headerMenu__centerBlock {
+        background-size: 90px;
+    }
+
+    .spisokTasksItems__price {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .spisokTaskItems__blockAgree {
+        width: 150px;
+        height: 42px;
+    }
+
+    .spisokTaskItems__btnAgreeURL {
+        font-size: 18px;
+    }
+
+    .spisokTaskItems__time {
+        font-size: 12px;
+    }
+
+    .spisokTasksItems__RightBlock {
+        flex-basis: 160px;
+    }
+
+    .pageTitle {
+        margin-bottom: 20px;
+    }
+
+    .pageTitle > h1 {
+        font-size: 30px;
+    }
+
+    .btn {
+        padding-bottom: 2px;
+    }
+
+    .typeTask {
+        padding-bottom: 300px;
+    }
+
+    .taskCreate__typeTaskSelect,
+    .taskCreate__typePodTaskSelect,
+    .taskCreate__citySelect {
+        width: 100%;
+    }
+}
+
+/* 992px END */
+
+/* 768px */
+@media screen and (max-width: 768px) {
+    .spisokTasksItems {
+        display: block;
+    }
+
+    .spisokTasksItems__RightBlock {
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+    }
+
+    .spisokTasksItems__leftBlock {
+        padding: 10px;
+        border-bottom: 2px solid rgba(155, 155, 155, 0.2);
+    }
+
+    .spisokTasksItems__leftBlock::after {
+        content: '';
+        opacity: 0;
+    }
+
+    .spisokTasksItems__price {
+        font-size: 16px;
+        margin-bottom: 10px;
+        position: absolute;
+        top: 11px;
+        left: 20px;
+    }
+
+    .spisokTaskItems__time {
+        position: absolute;
+        top: 0;
+        left: 80%;
+        font-size: 13px;
+    }
+
+    .spisokTaskItems__blockAgree {
+        width: 150px;
+        height: 42px;
+    }
+
+    .spisokTaskItems__btnAgreeURL,
+    .spisokTaskItems__btnAgreeURL:hover {
+        font-size: 18px;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    .categoryItems {
+        display: none;
+    }
+
+    .categoryItems.categoryItems__main {
+        display: flex;
+    }
+
+    .headerMenu__centerBlock {
+        /*        background-image: none;*/
+    }
+
+    .pageTitle {
+        margin-bottom: 20px;
+    }
+
+    .pageTitle > h1 {
+        font-size: 30px;
+    }
+
+    .footer__blockTitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer__url {
+        font-size: 14px;
+    }
+
+    .copyright_text {
+        font-size: 14px;
+    }
+
+    .spisokTasksItems__content {
+        font-size: 16px;
+    }
+
+    .spisokTasksItems__region {
+        font-size: 14px;
+    }
+
+    .spisokTasksItems__caption {
+        font-size: 17px;
+        padding-bottom: 0;
+    }
+
+    .taskDetailContent {
+        display: block;
+    }
+
+    .taskDetail {
+        width: 100%;
+    }
+
+    .headerMenu {
+        height: 100px;
+    }
+
+    .typeTask {
+        padding-bottom: 285px;
+    }
+
+    .taskCreate__typeTaskSelect,
+    .taskCreate__typePodTaskSelect,
+    .taskCreate__citySelect {
+        width: 100%;
+        font-size: 16px;
+    }
+    .taskCreate__input, .taskCreate__textarea{
+        font-size: 16px;
+    }
+
+}
+
+/* 768px END */
+
+/* 760px */
+@media screen and (max-width: 760px) {
+    .typeTask {
+        padding-bottom: 605px;
+    }
+
+    .blockTypeWork {
+        top: 820px;
+    }
+}
+
+/* 760px END */
+
+/* 576px */
+@media screen and (max-width: 576px) {
+    .spisokTasksItems__RightBlock {
+        padding: 5px 0;
+        display: block;
+    }
+
+    .spisokTasksItems__price {
+        position: static;
+    }
+
+    .spisokTaskItems__time {
+        position: static;
+    }
+
+    .headerMenu__centerBlock {
+        display: none;
+    }
+
+    .headerMenu.fixed {
+        background-color: #fff;
+        background-image: none;
+    }
+
+    .headerMenu {
+        padding: 5px;
+    }
+
+    .pagination a,
+    .pag_dots {
+        font-size: 14px;
+    }
+
+    .pagination__nav a {
+        height: 20px;
+    }
+
+    .spisokTasksItems__content {
+        font-size: 15px;
+    }
+
+    .spisokTasksItems__caption {
+        font-size: 16px;
+    }
+
+    .breadcrumb-item,
+    .breadcrumb-item.active {
+        font-size: 12px;
+        font-family: 'OpenSans Semibold';
+    }
+
+    .freeservice__info {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    .freeservice__title h1,
+    .taskCreate__page-title h1 {
+        font-size: 30px;
+        padding: 0 5px;
+
+    }
+
+    .taskCreate__page-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .freeservice {
+        height: 200px;
+    }
+
+    .freeservice__title p {
+        font-size: 16px;
+    }
+
+    .taskCreate__type-Task-Title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+}
+
+/* 576 END */
+
+/* 425px */
+@media screen and (max-width: 425px) {
+    .spisokTaskItems__blockAgree {
+        display: inline;
+        padding: 1px 5px 4px;
+        margin-left: calc(50% - 50px);
+    }
+
+    .spisokTaskItems__btnAgreeURL,
+    .spisokTaskItems__btnAgreeURL:hover {
+        font-size: 15px;
+    }
+
+    .spisokTaskItems__time {
+        margin-left: calc(50% - 176px);
+        margin-top: 10px;
+    }
+
+    .spisokTasksItems__price {
+        margin-bottom: 5px;
+    }
+
+    .headerMenu {
+        height: 60px;
+    }
+
+    .taskDetailContent__region {
+        font-size: 13px;
+        margin: 5px 0;
+    }
+
+    .spisokTasksItems__uslovie,
+    .spisokTasksItems__uslovie span {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .typeTask {
+        padding-bottom: 605px;
+    }
+
+    .blockTypeWork {
+        top: 820px;
+    }
+}
+
+/* 425 end */
+
+
+/* 400px */
+@media screen and (max-width: 400px) {
+    .headerMenu__url {
+        font-size: 11px;
+    }
+
+    .btn-secondary {
+        font-size: 11px;
+    }
+
+    .spisokTasksItems__content {
+        font-size: 14px;
+    }
+
+    .spisokTasksItems__caption {
+        font-size: 15px;
+    }
+
+    .headerMenu__leftBlock {
+        flex-basis: auto;
+    }
+
+    .headerMenu {
+        padding: 0 5px;
+    }
+
+    .taskCreate__type-Task-Title {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .taskCreate__typeTaskSelect,
+    .taskCreate__typePodTaskSelect,
+    .taskCreate__citySelect {
+        font-size: 14px;
+    }
+
+    .taskCreate__input::-moz-placeholder,
+    .taskCreate__textarea::-moz-placeholder {
+        font-size: 14px;
+    }
+
+    .taskCreate__input:-ms-input-placeholder,
+    .taskCreate__textarea:-ms-input-placeholder {
+        font-size: 14px;
+    }
+
+    .taskCreate__input::-webkit-input-placeholder,
+    .taskCreate__textarea::-webkit-input-placeholder {
+        font-size: 14px;
+    }
+    .taskCreate__input, .taskCreate__textarea{
+        font-size: 14px;
+    }
+
+}
+
+/* 400px END */
+
+
+/* 320px */
+@media screen and (max-width: 320px) {
+    .typeTask {
+        padding-bottom: 650px;
+    }
+}
+
+/* 320px  END*/

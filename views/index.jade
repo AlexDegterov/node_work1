@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  .taskDetail
+        // Блок объявления
+        .taskDetailContent
+          .taskDetailContent__opisanie
+            //
+              <p class="categoryItems__icon categoryItems__iconTM"></p>
+              <div class="taskDetailContent__category">Теплоснабжение</div>
+            h2.spisokTasksItems__caption
+              a.spisokTasksItems__captionURL(href='115.html', title='Ссылка на данное объявление') Проект узла учета тепловой энергии
+            .taskDetailContent__region.taskDetailContent__region_true
+              | Москва, Котельническая наб. 1
+            .spisokTasksItems__uslovie
+              span Объект:
+              | жилой дом по адресу Москва, ул. Котельническая наб. 1.
+            .spisokTasksItems__uslovie
+              span Описание объекта проектирования:
+              | капитальный ремонт многоэтажного жилого дома.
+            .spisokTasksItems__uslovie
+              span Объём работы:
+              | проектирование узла учета тепловой энергии.
+            .spisokTasksItems__uslovie
+              span Условия:
+              | срочно подготовить проект по капитальному ремонту многоэтажного жилого дома, возможно на удаленной работе.
+            .spisokTasksItems__uslovie
+              span Исполнитель:
+              | проектная организация.
+            .spisokTasksItems__uslovie
+              span Срок выполнения:
+              | срочно.
+          .spisokTasksItems__RightBlock
+            .spisokTasksItems__price
+              span 50 000 руб.
+            .spisokTaskItems__blockAgree
+              a.spisokTaskItems__btnAgreeURL.wow.fadeIn(href='#', title='Взять заказ', data-wow-offset='25') выполнить
+            .spisokTaskItems__time
+              span создано 04.09.2018

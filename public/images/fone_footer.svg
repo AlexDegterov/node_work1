@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:ns="http://creativecommons.org/ns#" xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2" space="preserve" overflow="visible" viewBox="0 0 303.125 156.041" version="1.0" enable-background="new 0 0 303.125 156.041">
+  <g id="g4554" transform="translate(3.6957 -1.8478)">
+    <path id="path2605" d="m6.0197 16.139l-5.5197 58.877 26.679 83.714 253.91-17.48 20.24-83.713-24.84-57.037-270.47 15.639z" stroke="#f3f3f3" stroke-width="1px" fill="none"/>
+    <path id="path2607" d="m238.77 87.896l11.04 26.674m-83.72 4.6l-11.04-25.755m-94.753 6.44l-2.76 25.755m-57.037-50.594l300.83-16.559" stroke="#f3f3f3" stroke-width="1px" fill="none"/>
+    <path id="path2609" d="m97.515 115.1a30.358 18.859 0 1 1 -60.717 0 30.358 18.859 0 1 1 60.717 0z" transform="matrix(.82185 0 0 .78640 12.464 23.138)" stroke="#f3f3f3" stroke-linecap="square" stroke-width=".88899" fill="none"/>
+    <use id="use4549" xlink:href="#path2609" transform="translate(83.716 -6.4397)" height="156.041" width="303.125" y="0" x="0"/>
+    <use id="use4551" xlink:href="#path2609" transform="translate(166.51 -10.119)" height="156.041" width="303.125" y="0" x="0"/>
+  </g>
+</svg>

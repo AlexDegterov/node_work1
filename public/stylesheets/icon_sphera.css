@@ -1,0 +1,60 @@
+.categoryItems__icon {
+    position: absolute;
+    left: 0;
+    top: -4px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+.categoryItems__iconAVT {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -40px 0;
+}
+.categoryItems__iconARH {
+    background-image: url('../img/icons_razdel.png');
+    background-position: 0 0;
+}
+.categoryItems__iconVIK {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -480px 0;
+}
+.categoryItems__iconOV {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -512px 0;
+}
+.categoryItems__iconGSV {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -120px 0;
+}
+.categoryItems__iconGST {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -160px 0;
+}
+.categoryItems__iconPOJ {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -240px 0;
+}
+.categoryItems__iconSMT {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -320px 0;
+}
+.categoryItems__iconSTR {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -360px 0;
+}
+.categoryItems__iconTM {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -440px 0;
+}
+.categoryItems__iconTEH {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -400px 0;
+}
+.categoryItems__iconHOL {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -200px 0;
+}
+.categoryItems__iconELE {
+    background-image: url('../img/icons_razdel.png');
+    background-position: -80px 0;
+}
