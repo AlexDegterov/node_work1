@@ -95,3 +95,16 @@ html(lang='ru')
         script(src='/javascripts/wow.min.js')
         script.
           new WOW().init();
+        script(src='/javascripts/chat.js')
+        script(src='/javascripts/socket.io.js')
+        script.
+          var socket = io.connect('http://localhost:3003');
+          socket.on('connect', function () {
+          console.log('connected');
+          });
+          socket.on('echo', function (rows) {
+          var html = JSON.stringify(rows);
+          console.log('socket on');
+          document.getElementById("display").innerHTML = html;
+          //console.log(rows);
+          });  
