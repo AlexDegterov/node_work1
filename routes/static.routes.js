@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Maintext = require('../models/maintext.models');
 
-/* GET home page. */
-
 router.get('/all', function(req, res, next) {
   Maintext.findAll({}).then(data => {
     res.json(data)
@@ -15,13 +13,8 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-  //console.log(req.body);
   const obj = new Maintext(req.body);
-  //console.log(obj);
   obj.save().then( data => {
-   // console.log(req.body);
-    //console.log(data);
-    //res.json(data);
   }).catch(err);
   console.log("Сохранено");
   res.send("Сохранено");
@@ -47,7 +40,6 @@ router.get('/delete/:id', function(req, res, next) {
   console.log("Сохранено");
 });
 
-
 router.get('/:url', function(req, res, next) {
   var url = req.params.url;
   Maintext.findOne({
@@ -59,8 +51,6 @@ router.get('/:url', function(req, res, next) {
     console.log(err);
   })
 });
-
-
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
