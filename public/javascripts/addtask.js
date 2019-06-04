@@ -89,7 +89,7 @@
          } else if ($(this).scrollTop() <= 125 && $menu.hasClass("fixed")) {
              $menu.hide().addClass("default").removeClass("fixed");
              $menu.show();
-             $logo.css({"backgroundImage": "url("+$ssylka+"img/logo.png)"});
+             $logo.css({"backgroundImage": "url("+$ssylka+"images/logo.png)"});
          }
      });
   });

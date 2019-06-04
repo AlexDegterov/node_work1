@@ -14,12 +14,12 @@
          if ($(this).scrollTop() > 125 && $menu.hasClass("default")) {
              $menu.hide().addClass("fixed").removeClass("default");
              $menu.show();
-             $logo.css({"backgroundImage": "url("+$ssylka+$ssylkaDop+"img/logo_sm.png)"});
+             $logo.css({"backgroundImage": "url("+$ssylka+$ssylkaDop+"images/logo_sm.png)"});
 
          } else if ($(this).scrollTop() <= 125 && $menu.hasClass("fixed")) {
              $menu.hide().addClass("default").removeClass("fixed");
              $menu.show();
-             $logo.css({"backgroundImage": "url("+$ssylka+$ssylkaDop+"img/logo.png)"});
+             $logo.css({"backgroundImage": "url("+$ssylka+$ssylkaDop+"images/logo.png)"});
          }
      });
      

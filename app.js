@@ -24,8 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
-app.use('/', staticRouter);
 app.use('/chat', chatRouter);
+app.use('/', staticRouter);
 
 app.use(function(req, res, next) {
   next(createError(404)); 
