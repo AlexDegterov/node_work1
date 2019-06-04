@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .taskDetail
+        .taskDetailContent
+            iframe(src='http://localhost:9000/chat.html?Name=#{name}&Room=#{room}', width='70%', height='600px')
+    #display

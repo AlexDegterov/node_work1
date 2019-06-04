@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .centered-form__form
+    form(action='/chat')
+      .form-field
+        h3  ZTeam Chat
+        h3
+      .form-field
+        label Display name
+        input(type='text', name='Name', autofocus='')
+      .form-field
+        label Room name
+        input(type='text', name='Room')
+      .form-field
+        button Join
