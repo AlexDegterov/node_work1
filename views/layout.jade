@@ -14,6 +14,8 @@ html(lang='ru')
     link(rel='stylesheet', href='/stylesheets/icon_sphera.css')
     link(rel='stylesheet', href='/stylesheets/animate.min.css')
     link(href='/favicon.ico', rel='icon', type='image/x-icon')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    block styles
   body
     // Шапка страницы
     .content
@@ -88,7 +90,7 @@ html(lang='ru')
         // Подвал END
         // Загружаемое в конце
         //- script(src='/jquery.min.js')
-        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+       
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
         script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
         script(src='/javascripts/jquery.dotdotdot.js')
@@ -98,6 +100,7 @@ html(lang='ru')
           new WOW().init();
         script(src='/javascripts/chat.js')
         script(src='/javascripts/socket.io.js')
+        block scripts
         script.
           var socket = io.connect('http://localhost:3003');
           socket.on('connect', function () {

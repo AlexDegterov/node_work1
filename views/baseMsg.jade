@@ -1,0 +1,20 @@
+extends layout
+block styles
+  link(rel='stylesheet', href='/stylesheets/base.css')
+  
+block scripts
+  script('src' = "/javascripts/base.js")
+
+block content
+  .taskDetail
+        .taskDetailContent
+        h1 Modal
+        ul
+          each item in data
+            li.links
+              a(href="#", data-id="#{item.id}") #{item.name}
+        
+
+
+
+    

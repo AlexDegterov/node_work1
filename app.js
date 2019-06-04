@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var staticRouter = require('./routes/static.routes');
 var chatRouter = require('./routes/chat.routes');
+var baseRouter = require('./routes/base.routes');
 
 // Подключаем чат
 var chat_app = require("zteam-chat");
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 app.use('/chat', chatRouter);
+app.use('/base', baseRouter);
 app.use('/', staticRouter);
 
 app.use(function(req, res, next) {
