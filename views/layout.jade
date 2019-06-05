@@ -14,7 +14,6 @@ html(lang='ru')
     link(rel='stylesheet', href='/stylesheets/icon_sphera.css')
     link(rel='stylesheet', href='/stylesheets/animate.min.css')
     link(href='/favicon.ico', rel='icon', type='image/x-icon')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     block styles
   body
     // Шапка страницы
@@ -60,9 +59,11 @@ html(lang='ru')
               a(href='/razdel.html') Теплоснабжение
             li.breadcrumb-item.active(aria-current='page') Проект узла учета тепловой энергии
       // Конец Хлебные крошки
+
       // Центральная часть
       block content
         // Центральная часть. Конец
+
         // Подвал
       section.footer
         .d-flex.justify-content-center.row
@@ -88,6 +89,7 @@ html(lang='ru')
               | Все права защищены 
               br
         // Подвал END
+        
         // Загружаемое в конце
         //- script(src='/jquery.min.js')
        
@@ -100,6 +102,7 @@ html(lang='ru')
           new WOW().init();
         script(src='/javascripts/chat.js')
         script(src='/javascripts/socket.io.js')
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
         block scripts
         script.
           var socket = io.connect('http://localhost:3003');
@@ -110,5 +113,4 @@ html(lang='ru')
           var html = JSON.stringify(rows);
           console.log('socket on');
           document.getElementById("display").innerHTML = html;
-          //console.log(rows);
           });  
