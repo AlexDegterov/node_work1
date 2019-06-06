@@ -14,6 +14,7 @@ html(lang='ru')
     link(rel='stylesheet', href='/stylesheets/icon_sphera.css')
     link(rel='stylesheet', href='/stylesheets/animate.min.css')
     link(href='/favicon.ico', rel='icon', type='image/x-icon')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     block styles
   body
     // Шапка страницы
@@ -102,7 +103,7 @@ html(lang='ru')
           new WOW().init();
         script(src='/javascripts/chat.js')
         script(src='/javascripts/socket.io.js')
-        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+
         block scripts
         script.
           var socket = io.connect('http://localhost:3003');

@@ -4,10 +4,10 @@ var Chatmessage = require('../models/chatmessage.models');
 
 router.get('/', function(req, res, next) {
     Chatmessage.findAll({
-    when: { }
+    where: { }
   }).then(data => {
      //console.log(data[0]);
-    res.render('baseMsg', { data: data } ); 
+    res.render('modal', { data: data } ); 
     }).catch(err => {
         res.json(err);
         console.log(err);

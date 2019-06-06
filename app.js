@@ -6,11 +6,12 @@ var logger = require('morgan');
 
 var staticRouter = require('./routes/static.routes');
 var chatRouter = require('./routes/chat.routes');
-var baseRouter = require('./routes/base.routes');
+var modalRouter = require('./routes/modal.routes');
+var ajaxRouter = require('./routes/ajax/modal.ajax');
 
 // Подключаем чат
 var chat_app = require("zteam-chat");
-chat_app.run(9000);
+chat_app.run(9001);
 
 var app = express();
 
@@ -26,7 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 app.use('/chat', chatRouter);
-app.use('/base', baseRouter);
+app.use('/modal', modalRouter);
+app.use('/ajax', ajaxRouter);
 app.use('/', staticRouter);
 
 app.use(function(req, res, next) {
@@ -43,5 +45,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(8002);
+app.listen(8003);
 module.exports = app;
