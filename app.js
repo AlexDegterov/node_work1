@@ -1,17 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError = require('http-errors'),
+  express = require('express'),
+  path = require('path'),
+  cookieParser = require('cookie-parser'),
+  logger = require('morgan');
 
-var staticRouter = require('./routes/static.routes');
-var chatRouter = require('./routes/chat.routes');
-var modalRouter = require('./routes/modal.routes');
-var ajaxRouter = require('./routes/ajax/modal.ajax');
+var staticRouter = require('./routes/static.routes'),
+  chatRouter = require('./routes/chat.routes'),
+  modalRouter = require('./routes/modal.routes'),
+  ajaxRouter = require('./routes/ajax/modal.ajax'),
+  searchRouter = require('./routes/search.routes');
 
 // Подключаем чат
 var chat_app = require("zteam-chat");
-chat_app.run(9001);
+chat_app.run(9000);
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 app.use('/chat', chatRouter);
 app.use('/modal', modalRouter);
 app.use('/ajax', ajaxRouter);
+app.use('/search', searchRouter);
 app.use('/', staticRouter);
 
 app.use(function(req, res, next) {
@@ -45,5 +47,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(8003);
+app.listen(8002);
 module.exports = app;

@@ -43,7 +43,7 @@ router.get('/delete/:id', function(req, res, next) {
 router.get('/:url', function(req, res, next) {
   var url = req.params.url;
   Maintext.findOne({
-    when: {url: url}
+    where: {url: url}
   }).then(data => {
     res.render('static', { data: data } ); //{ title: url }
   }).catch(err => {

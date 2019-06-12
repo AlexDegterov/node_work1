@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  form(action='/search', metod='GET')
+    p
+      b Поиск по сайту
+      input(type='text', size='40', name='search')
+      input(type='submit', value='Найти')
+
+
+

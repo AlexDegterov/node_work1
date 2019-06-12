@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .taskDetail
+    .taskDetailContent
+    h1 Результаты поиска по сайту
+    form(action='/search', metod='GET')
+      p
+        input(type='text', size='40', name='search', value='#{search}')
+        input(type='submit', value='Найти')
+
+    ul
+      each item in data
+        li.links
+          a(href="/#{item.url}") #{item.name}
