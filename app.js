@@ -10,7 +10,10 @@ var staticRouter = require('./routes/static.routes'),
   modalRouter = require('./routes/modal.routes'),
   ajaxRouter = require('./routes/ajax/modal.ajax'),
   searchRouter = require('./routes/search.routes'),
-  authRouter = require('./routes/auth.routes');
+  authRouter = require('./routes/auth.routes'),
+  cabinetRouter = require('./routes/cabinet.routes');
+
+var checkAuth = require('./utils/checkAuth');
 
 // Подключаем чат
 var chat_app = require("zteam-chat");
@@ -42,11 +45,20 @@ app.use(function (req, res, next) {
   next();
 })
 
+app.use(function(req, res, next) {
+  res.locals = {
+    userId: req.session.userId
+  };
+  console.log(res.locals.userId);
+  next();
+});
+
 app.use('/chat', chatRouter);
 app.use('/modal', modalRouter);
 app.use('/ajax', ajaxRouter);
 app.use('/search', searchRouter);
 app.use('/auth', authRouter);
+app.use('/cabinet', checkAuth, cabinetRouter);
 app.use('/', staticRouter);
 
 app.use(function(req, res, next) {

@@ -42,6 +42,16 @@ html(lang='ru')
                   a.headerMenu__url.dropdown-item.disabled(href='#', title='Все заказы на выполнение строительных работ') Строительные работы
             li
               a.headerMenu__url(href='#', title='Посмотреть всех зарегистрированных исполнителей') Исполнители
+            li
+              .dropdown
+                if userId
+                  button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    span Кабинет
+                  .dropdown-menu(aria-labelledby='dropdownMenu2')
+                    a.headerMenu__url.dropdown-item(href='/cabinet', title='Войти в кабинет пользователя') Войти в кабинет
+                    a.headerMenu__url.dropdown-item(href='/auth/logout', title='Выйти') Выйти
+                else  
+                  a.headerMenu__url(href='/auth/login', title='Войти',) Вход  
         
         .headerMenu__rightBlock
           .headerMenu__leftBlock

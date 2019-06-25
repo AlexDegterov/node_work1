@@ -49,14 +49,21 @@ router.post('/login', function (req, res, next) {
     if (data)  {
       req.session.userId = data.id;
       console.log(req.session.userId);
-            
-      return res.send("Пользователь найден, вход выполнен");
+      
+      res.redirect("/");
+      //return res.send("Пользователь найден, вход выполнен");
     }
     return res.render('login', { title: 'Вход на сайт', err: 'Нет такого пользователя. Проверьте вводимые данные' });
   }).catch(err => {
     res.json(err);
     console.log(err);
   })
+});
+
+router.get('/logout', function (req, res, next) {
+  req.session.destroy();
+  res.redirect("/");
+  next();
 });
 
 module.exports = router;

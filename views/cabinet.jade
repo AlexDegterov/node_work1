@@ -1,0 +1,23 @@
+extends layout
+block styles
+  link(rel='stylesheet', href='/stylesheets/style_auth.css')
+  
+block content
+  #login
+    .flip
+      .form-signup
+        h1 Личные данные пользователя
+        fieldset
+          .err #{msg}
+          p.login-msg
+          form(action='/cabinet', method='post')
+            input(name='name', type='text', placeholder='Укажите Ваше имя...', value='#{data.name}')
+            input(name='surname', type='text', placeholder='Укажите Вашу фамилию...', value='#{data.surname}')
+            input(name='town', type='text', placeholder='Ваш город...', value='#{data.town}')
+            input(type='submit', value='Сохранить данные')
+
+        
+
+
+
+    
