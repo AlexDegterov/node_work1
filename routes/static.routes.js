@@ -6,13 +6,14 @@ router.get('/all', function(req, res, next) {
   Maintext.findAll({}).then(data => {
     res.json(data)
   })
+  next();
 }); 
 
-router.get('/contact', function(req, res, next) {
+router.get('/contact', function(req, res) {
   res.render('contact', { title: 'Контакты' });
 });
 
-router.post('/add', function(req, res, next) {
+router.post('/add', function(req, res) {
   const obj = new Maintext(req.body);
   obj.save().then( data => {
   }).catch(err);
@@ -20,7 +21,7 @@ router.post('/add', function(req, res, next) {
   res.send("Сохранено");
 });
 
-router.post('/update/:id', function(req, res, next) {
+router.post('/update/:id', function(req, res) {
   console.log();
   Maintext.update({
     name: req.body.name,
@@ -30,17 +31,19 @@ router.post('/update/:id', function(req, res, next) {
     where: {id: req.params.id}
   }).catch(err);
   console.log("Сохранено");
+  res.send("Сохранено");
 });
 
-router.get('/delete/:id', function(req, res, next) {
+router.get('/delete/:id', function(req, res) {
   console.log();
   Maintext.destroy({
     where: {id: req.params.id}
   }).catch(err);
   console.log("Сохранено");
+  res.send("Сохранено");
 });
 
-router.get('/:url', function(req, res, next) {
+router.get('/:url', function(req, res) {
   var url = req.params.url;
   Maintext.findOne({
     where: {url: url}
@@ -52,7 +55,7 @@ router.get('/:url', function(req, res, next) {
   })
 });
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 

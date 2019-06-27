@@ -4,7 +4,7 @@ const express = require('express'),
   Sequelize = require('sequelize'),
   Op = Sequelize.Op;
 
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
   var search = req.query.search;
   if (!search) return res.render('search', { title: 'Страница поиска' });
   Maintext.findAll({

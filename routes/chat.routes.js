@@ -3,7 +3,7 @@ var cors = require('cors');
 var router = express.Router();
 var Chatmessage = require('../models/chatmessage.models');
 
-router.get('/', cors(), function(req, res, next) {
+router.get('/', cors(), function(req, res) {
     if(req.query.Name && req.query.Room) {
         res.render('chat', { name: req.query.Name, room: req.query.Room });
     } else {
@@ -11,7 +11,7 @@ router.get('/', cors(), function(req, res, next) {
     }    
 });
 
-router.post('/', cors(), function(req, res, next) {
+router.post('/', cors(), function(req, res) {
     const obj = new Chatmessage(req.body);
     obj.save().then( data => {
         

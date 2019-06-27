@@ -4,7 +4,7 @@ const express = require('express'),
   Sequelize = require('sequelize'),
   Op = Sequelize.Op;
 
-router.post('/register', function (req, res, next) {
+router.post('/register', (req, res) => {
   const userParam = {
     name: req.body.name,
     email: req.body.email,
@@ -14,21 +14,20 @@ router.post('/register', function (req, res, next) {
   }
 
   const obj = new User(userParam);
-  obj.save().then( data => {
-    }).catch(err => console.log(err));
+  obj.save().then(data => { }).catch(err => console.log(err));
   console.log("Сохранен пользователь: " + userParam);
   res.redirect('/auth/login');
 });
 
-router.get('/register', function (req, res, next) {
+router.get('/register', (req, res) => {
   res.render('register', { title: 'Регистрация' });
 });
 
-router.get('/login', function (req, res, next) {
+router.get('/login', (req, res) => {
   res.render('login', { title: 'Вход на сайт' });
 });
 
-router.post('/login', function (req, res, next) {
+router.post('/login', function (req, res) {
   const userParam = {
     email: req.body.email,
     password: req.body.password,
@@ -43,15 +42,12 @@ router.post('/login', function (req, res, next) {
         {
           password: userParam.password
         }
-      ]    
+      ]
     }
   }).then(data => {
-    if (data)  {
+    if (data) {
       req.session.userId = data.id;
-      console.log(req.session.userId);
-      
       res.redirect("/");
-      //return res.send("Пользователь найден, вход выполнен");
     }
     return res.render('login', { title: 'Вход на сайт', err: 'Нет такого пользователя. Проверьте вводимые данные' });
   }).catch(err => {
