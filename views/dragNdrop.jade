@@ -1,0 +1,12 @@
+extends layout
+block styles
+  link(rel='stylesheet', href='/stylesheets/style_dragNdrop.css')
+block scripts
+  script('src' = "/javascripts/dragNdrop.js")
+block content
+  section#picturebox
+      img#image1(src='/images/batterfly.jpg')
+      img#image2(src='/images/img2.jpg')
+      img#image3(src='/images/img3.jpg')
+  section#dropbox Drag'n'drop image here
+  div.clear

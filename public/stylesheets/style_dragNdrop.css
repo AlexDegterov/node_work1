@@ -1,0 +1,32 @@
+#dropbox {
+    float: right;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border: solid 1px green;
+    position: relative;
+}
+
+#picturebox {
+    border: solid 1px gold;
+    padding: 10px;
+    float: left;
+}
+
+#picturebox img {
+    width: 150px;
+}
+
+#dropbox img {
+    width: 120px;
+}
+
+.clear {
+    clear: both;
+}
+
+#dropbox img {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
