@@ -21,21 +21,22 @@ router.post('/', function (req, res) {
     surname: req.body.surname,
     town: req.body.town
   }
-
-  Profile.findOne({
-    where: { user_id: userParam.user_id }
-  }).then(data => {
-    if (data) {
-      return saveProfile(userParam, res);
-    }
-    return updateProfile(userParam, res);
-  });
+  return saveUserProfile(userParam, res);
 });
+
+function saveUserProfile(userParam, res) {
+  Profile.upsert(userParam).then(execute => {
+    redirect(execute, res);
+  }).catch(err => errorOperation(err, res));
+}
 
 function message(cod) {
   switch (cod) {
     case "saved":
       msg = 'Данные сохранены';
+      break;
+    case "update":
+      msg = 'Данные обновлены';
       break;
     case "err":
       msg = 'Возникла ошибка сохранения данных';
@@ -47,24 +48,9 @@ function message(cod) {
   return msg;
 }
 
-function saveProfile(userParam, res) {
-  Profile.update(userParam, {
-    where: { user_id: userParam.user_id }
-  }).then(execute => {
-    redirect(execute, res);
-  }).catch(err => errorOperation(err, res));
-}
-
-function updateProfile(userParam, res) {
-  const obj = new Profile(userParam);
-  obj.save().then(execute => {
-    redirect(execute, res);
-  }).catch(err => errorOperation(err, res));
-}
-
 function redirect(execute, res) {
   if (execute) return res.redirect('/cabinet?msg=saved&stamp=' + Date.now());
-  return res.redirect('/cabinet?msg=err&stamp=' + Date.now());
+  return res.redirect('/cabinet?msg=update&stamp=' + Date.now());
 }
 
 function errorOperation(err, res) {
