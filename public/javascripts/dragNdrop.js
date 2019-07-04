@@ -5,8 +5,7 @@ addEventListener('load', initiate);
 function initiate() {
     images = document.querySelectorAll('#picturebox>img');
     for (let i = 0; i < images.length; i++) {
-        images[i].addEventListener('dragstart', dragstart);
-        images[i].addEventListener('drop', dropFunctionImage);
+        setEventsListenersImage(images[i]);
     }
     dropBox = document.getElementById('dropbox');
     blockPicture = document.getElementById('picturebox');
@@ -25,8 +24,7 @@ function dragover(e) {
 
 function dragstart(e) {
     block = false;
-    let elem = e.target;
-    e.dataTransfer.setData('text/plain', elem.getAttribute('id'));
+    e.dataTransfer.setData('text/plain', e.target.getAttribute('id'));
 }
 
 function dropFunction(e) {
@@ -37,7 +35,6 @@ function dropFunction(e) {
         parentElem = dragElement.parentElement,
         cutElement = parentElem.removeChild(dragElement);
     dropBox.appendChild(cutElement);
-
     e.preventDefault();
 }
 
@@ -48,16 +45,20 @@ function dropFunctionImage(e) {
 }
 
 function chgElement(elemId_1, elemId_2) {
+    if(elemId_1 == elemId_2) return;
     var element1 = document.getElementById(elemId_1),
         element2 = document.getElementById(elemId_2),
         cloneElement1 = element1.cloneNode(true),
         cloneElement2 = element2.cloneNode(true);
-    cloneElement1.addEventListener('dragstart', dragstart);
-    cloneElement1.addEventListener('drop', dropFunctionImage);
-    cloneElement2.addEventListener('dragstart', dragstart);
-    cloneElement2.addEventListener('drop', dropFunctionImage);
+    setEventsListenersImage(cloneElement1);
+    setEventsListenersImage(cloneElement2);
     element2.parentNode.insertBefore(cloneElement1, element2);
     element1.parentNode.insertBefore(cloneElement2, element1);
     element1.parentNode.removeChild(element1);
     element2.parentNode.removeChild(element2);
+}
+
+function setEventsListenersImage(elem) {
+    elem.addEventListener('dragstart', dragstart);
+    elem.addEventListener('drop', dropFunctionImage);
 }
