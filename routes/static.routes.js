@@ -17,8 +17,8 @@ router.post('/add', function(req, res) {
   const obj = new Maintext(req.body);
   obj.save().then( data => {
   }).catch(err);
-  console.log("Сохранено");
-  res.send("Сохранено");
+  console.log("Добавлено");
+  res.send("Добавлено");
 });
 
 router.post('/update/:id', function(req, res) {
@@ -30,17 +30,16 @@ router.post('/update/:id', function(req, res) {
   }, {
     where: {id: req.params.id}
   }).catch(err);
-  console.log("Сохранено");
-  res.send("Сохранено");
+  console.log("Обновлено");
+  res.send("Обновлено");
 });
 
 router.get('/delete/:id', function(req, res) {
-  console.log();
   Maintext.destroy({
     where: {id: req.params.id}
   }).catch(err);
-  console.log("Сохранено");
-  res.send("Сохранено");
+  console.log("Удалено");
+  res.send("Удалено");
 });
 
 router.get('/:url', function(req, res) {
@@ -48,7 +47,7 @@ router.get('/:url', function(req, res) {
   Maintext.findOne({
     where: {url: url}
   }).then(data => {
-    res.render('static', { data: data } ); //{ title: url }
+    res.render('static', { data: data } ); 
   }).catch(err => {
     res.json(err);
     console.log(err);

@@ -14,7 +14,8 @@ const Profile = config.sequelize.define('profile', {
         },  
         name: Sequelize.TEXT,       
         surname: Sequelize.TEXT,
-        town: Sequelize.DATE
+        town: Sequelize.DATE,
+        picture: Sequelize.TEXT
     },
     {
         tableName: 'profiles'

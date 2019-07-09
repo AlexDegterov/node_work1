@@ -16,7 +16,7 @@ router.post('/register', (req, res) => {
   const obj = new User(userParam);
   obj.save().then(data => { }).catch(err => console.log(err));
   console.log("Сохранен пользователь: " + userParam);
-  res.redirect('/auth/login');
+  return res.redirect('/auth/login');
 });
 
 router.get('/register', (req, res) => {
@@ -47,7 +47,7 @@ router.post('/login', function (req, res) {
   }).then(data => {
     if (data) {
       req.session.userId = data.id;
-      res.redirect("/");
+      return res.redirect("/");
     }
     return res.render('login', { title: 'Вход на сайт', err: 'Нет такого пользователя. Проверьте вводимые данные' });
   }).catch(err => {

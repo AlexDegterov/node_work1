@@ -3,7 +3,9 @@ var createError = require('http-errors'),
   path = require('path'),
   cookieParser = require('cookie-parser'),
   logger = require('morgan'),
-  session = require('express-session');
+  session = require('express-session'),
+  fileUpload = require('express-fileupload'),
+  fs = require('fs');
 
 var staticRouter = require('./routes/static.routes'),
   chatRouter = require('./routes/chat.routes'),
@@ -26,12 +28,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
+//app.use(logger('dev')); // логирование
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+app.use(fileUpload());
+// app.use(express.static('uploads'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.use(session({
   secret: 'keyboard cat',
@@ -50,7 +55,7 @@ app.use(function(req, res, next) {
   res.locals = {
     userId: req.session.userId
   };
-  console.log(res.locals.userId);
+  //console.log(res.locals.userId);
   next();
 });
 

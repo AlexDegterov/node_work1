@@ -10,10 +10,18 @@ block content
         fieldset
           .err #{msg}
           p.login-msg
-          form(action='/cabinet', method='post')
+          form(action='/cabinet', method='post', enctype='multipart/form-data')
             input(name='name', type='text', placeholder='Укажите Ваше имя...', value='#{data.name}')
             input(name='surname', type='text', placeholder='Укажите Вашу фамилию...', value='#{data.surname}')
             input(name='town', type='text', placeholder='Ваш город...', value='#{data.town}')
+            if data.picture
+              .pictureUser
+                img(src='/uploads/#{userId}/#{data.picture}')
+                a.urlDelImage(href='/cabinet/delimage', title='Удалить картинку')
+                  img.delImage(src='/uploads/delete.png')
+            else 
+              img(src='/uploads/no_foto.png')
+            input(name='picture', type='file')
             input(type='submit', value='Сохранить данные')
 
         
