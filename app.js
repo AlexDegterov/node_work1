@@ -4,8 +4,7 @@ var createError = require('http-errors'),
   cookieParser = require('cookie-parser'),
   logger = require('morgan'),
   session = require('express-session'),
-  fileUpload = require('express-fileupload'),
-  fs = require('fs');
+  fileUpload = require('express-fileupload');
 
 var staticRouter = require('./routes/static.routes'),
   chatRouter = require('./routes/chat.routes'),
@@ -34,8 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
-app.use(fileUpload());
-// app.use(express.static('uploads'));
+app.use(fileUpload({
+  createParentPath: true
+}));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.use(session({
