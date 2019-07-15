@@ -1,0 +1,8 @@
+.newsSiteUrl {
+	padding: 15px;
+}
+
+.newsSiteUrl.selected {
+	font-weight: bold;
+	color: red;
+}

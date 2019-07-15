@@ -1,14 +1,22 @@
 extends layout
 block styles
   link(rel='stylesheet', href='/stylesheets/style_news.css')
+block scripts
+  script('src' = '/javascripts/news.js')
 block content
   .taskDetail
-        .taskDetailContent
-        h1 Последние новости на TUT.by
+    .taskDetailContent2
+      .newsBut
+        a.newsSiteUrl.selected(href="#", data-id="tut_by") Tut.by
+        a.newsSiteUrl(href="#", data-id="belta_by") Belta.by
+        a.newsSiteUrl(href="#", data-id="interfax_by") Interfax.by
+        <br><br>
+      #newsBlock
         ul
           each item in news
-            li.links
-              a(href="#{item.url}") #{item.title}
+            if item.title
+              li.links
+                a(href="#{item.url}") #{item.time}. #{item.title}
 
 
     

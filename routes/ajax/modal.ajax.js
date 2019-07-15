@@ -14,11 +14,7 @@ router.post('/modal', function(req, res, next) {
         res.end();
       }).catch(err => {
         res.json(err);
-       // console.log(err);
       })
-
-    // console.log("Get id - " + idMsg);
-
 });
 
 module.exports = router;
