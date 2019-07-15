@@ -1,0 +1,14 @@
+extends layout
+block styles
+  link(rel='stylesheet', href='/stylesheets/style_news.css')
+block content
+  .taskDetail
+        .taskDetailContent
+        h1 Последние новости на TUT.by
+        ul
+          each item in news
+            li.links
+              a(href="#{item.url}") #{item.title}
+
+
+    

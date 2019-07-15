@@ -12,8 +12,9 @@ var staticRouter = require('./routes/static.routes'),
   ajaxRouter = require('./routes/ajax/modal.ajax'),
   searchRouter = require('./routes/search.routes'),
   authRouter = require('./routes/auth.routes'),
-  cabinetRouter = require('./routes/cabinet.routes');
-  dragRouter = require('./routes/dragNdrop.routes');
+  cabinetRouter = require('./routes/cabinet.routes'),
+  dragRouter = require('./routes/dragNdrop.routes'),
+  newsRouter = require('./routes/news.routes');
 
 var checkAuth = require('./utils/checkAuth');
 
@@ -66,6 +67,7 @@ app.use('/search', searchRouter);
 app.use('/auth', authRouter);
 app.use('/cabinet', checkAuth, cabinetRouter);
 app.use('/drag', dragRouter);
+app.use('/news', newsRouter);
 app.use('/', staticRouter);
 
 app.use(function(req, res, next) {
